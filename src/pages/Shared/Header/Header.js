@@ -13,7 +13,7 @@ const Header = () => {
         color: 'rgb(221, 223, 235)'
     }
     return (
-        <div className="bg-gradient-to-r from-gray-500 to-gray-900 mb-4 py-2 text-gray-200 flex justify-between">
+        <div className="bg-gradient-to-r from-gray-500 to-gray-900 py-2 text-gray-200 flex justify-between">
             <Link to="/" className="flex items-center lg:ml-16">
                 <div className="text-5xl text-blue-300">
                     <img width="65px" src={logo} alt="" />
