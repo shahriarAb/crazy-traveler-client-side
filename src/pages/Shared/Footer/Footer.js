@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className="absolute bottom-0 bg-gray-900 w-full text-center pt-6 pb-2 text-gray-200">
             <div className="mb-4">
-                <p>We are always worried about your safety and your sound travel. Ensure we give you the best.</p>
+                <p className="italic">We are always worried about your safety and your sound travel. Ensure we give you the best.</p>
 
                 <div className="mt-4 flex justify-around">
                     <div>
