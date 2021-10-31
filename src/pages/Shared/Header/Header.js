@@ -32,7 +32,21 @@ const Header = () => {
                         <li>
                             <NavLink className="hover:bg-gray-300 p-2 hover:text-gray-900 rounded-lg" to="/home" activeStyle={activeStyle}>Home</NavLink>
                         </li>
-
+                        {user.email &&
+                            <li>
+                                <NavLink className="hover:bg-gray-300 p-2 hover:text-gray-900 rounded-lg" to="/mybookings" activeStyle={activeStyle}>My Bookings</NavLink>
+                            </li>
+                        }
+                        {user.email &&
+                            <li>
+                                <NavLink className="hover:bg-gray-300 p-2 hover:text-gray-900 rounded-lg" to="/managebookings" activeStyle={activeStyle}>Manage All Bookings</NavLink>
+                            </li>
+                        }
+                        {user.email &&
+                            <li>
+                                <NavLink className="hover:bg-gray-300 p-2 hover:text-gray-900 rounded-lg" to="/addservice" activeStyle={activeStyle}>Add A New Service</NavLink>
+                            </li>
+                        }
                         <li>
                             {user.email ?
                                 <small>

@@ -26,7 +26,6 @@ const Destination = ({ destination }) => {
                                     3 days &bull; 2 nights
                                 </div>
                                 <small className="ml-3 text-gray-600 font-bold bg-red-200 rounded-full px-1">BDT {price}/-</small>
-                                <br />
                             </div>
                             <h4 className="mt-1 text-2xl font-bold uppercase leading-tight truncate">{name}</h4>
                             <div>
