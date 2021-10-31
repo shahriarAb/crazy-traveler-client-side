@@ -8,7 +8,7 @@ const MyBookings = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5500/bookings')
+        fetch('https://ghostly-vault-43616.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => {
                 setAllbookings(data);
@@ -21,7 +21,7 @@ const MyBookings = () => {
     const handleCancel = id => {
         const proceedToDelete = window.confirm('Are you sure you want to cancel this booking?');
         if (proceedToDelete) {
-            const url = `http://localhost:5500/bookings/${id}`;
+            const url = `https://ghostly-vault-43616.herokuapp.com/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

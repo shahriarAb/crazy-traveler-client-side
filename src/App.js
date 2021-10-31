@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AddService from './pages/AddService/AddService';
 import Booknow from './pages/Booknow/Booknow';
 import AuthProvider from './pages/Context/AuthProvider';
 import Home from './pages/Home/Home/Home';
@@ -23,15 +24,18 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/destination/:id">
+            <PrivateRoute path="/destination/:id">
               <Booknow></Booknow>
-            </Route>
-            <Route path="/mybookings">
+            </PrivateRoute>
+            <PrivateRoute path="/mybookings">
               <MyBookings></MyBookings>
-            </Route>
-            <Route path="/managebookings">
+            </PrivateRoute>
+            <PrivateRoute path="/managebookings">
               <ManageAllBookings></ManageAllBookings>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/addservice">
+              <AddService></AddService>
+            </PrivateRoute>
             <Route path="/signin">
               <Signin></Signin>
             </Route>

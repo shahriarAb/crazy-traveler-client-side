@@ -10,7 +10,9 @@ const Booknow = () => {
     const { user } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5500/bookings', {
+        data.status = 'pending';
+        console.log(data);
+        fetch('https://ghostly-vault-43616.herokuapp.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +29,7 @@ const Booknow = () => {
 
     const [destination, setDestination] = useState({});
     useEffect(() => {
-        const uri = `http://localhost:5500/destination/${id}`;
+        const uri = `https://ghostly-vault-43616.herokuapp.com/destination/${id}`;
         fetch(uri)
             .then(res => res.json())
             .then(data => setDestination(data));

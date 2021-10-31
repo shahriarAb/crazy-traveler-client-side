@@ -7,7 +7,7 @@ const Destinations = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5500/destinations')
+        fetch('https://ghostly-vault-43616.herokuapp.com/destinations')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
@@ -17,7 +17,7 @@ const Destinations = () => {
 
     if (isLoading) {
         return (
-            <div className="mt-10 flex justify-center items-center">
+            <div className="mt-24 flex justify-center items-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-600"></div>
                 <div className="ml-2 text-xl text-red-700 font-bold animate-pulse">Loading...</div>
             </div>
