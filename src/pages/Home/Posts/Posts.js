@@ -5,7 +5,7 @@ import post3 from '../../../images/post-3.jpg';
 
 const Posts = () => {
     return (
-        <div className="text-center my-28 px-20">
+        <div className="text-center my-28 lg:px-20">
             <h2 style={{ fontFamily: 'Dancing Script, cursive' }} className="text-xl font-semibold text-red-400">From Our Blog</h2>
             <p className="text-4xl font-extrabold">OUR RECENT POSTS</p>
 

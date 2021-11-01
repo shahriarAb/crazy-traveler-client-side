@@ -5,8 +5,7 @@ const Footer = () => {
         <div className="absolute bottom-0 bg-gray-900 w-full text-center pt-6 pb-2 text-gray-200">
             <div className="mb-4">
                 <p className="italic">We are always worried about your safety and your sound travel. Ensure we give you the best.</p>
-
-                <div className="mt-4 flex justify-around">
+                <div className="mt-4 lg:flex justify-around">
                     <div>
                         <a className="block hover:underline" href="www">Terms & Conditions</a>
                         <a className="block hover:underline" href="www">Privacy Policy</a>

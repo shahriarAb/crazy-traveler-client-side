@@ -11,7 +11,6 @@ const Booknow = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.status = 'pending';
-        console.log(data);
         fetch('https://ghostly-vault-43616.herokuapp.com/bookings', {
             method: 'POST',
             headers: {

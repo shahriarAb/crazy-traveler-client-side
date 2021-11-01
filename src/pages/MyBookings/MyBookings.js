@@ -11,12 +11,12 @@ const MyBookings = () => {
         fetch('https://ghostly-vault-43616.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => {
-                setAllbookings(data);
+                let myBookings = data.filter(myBook => myBook.email === user.email);
+                setAllbookings(myBookings);
                 setIsLoading(false);
             });
     }, []);
 
-    let myBookings = allbookings.filter(myBook => myBook.email === user.email);
 
     const handleCancel = id => {
         const proceedToDelete = window.confirm('Are you sure you want to cancel this booking?');
@@ -27,9 +27,10 @@ const MyBookings = () => {
             })
                 .then(res => res.json())
                 .then(result => {
-                    if (result.deletedCount > 0) {
-                        myBookings = myBookings.filter(allbooking => allbooking._id !== id);
+                    if (result.deletedCount) {
                         alert('Successfully canceled this booking!');
+                        const remainingBooks = allbookings.filter(allbooking => allbooking._id !== id);
+                        setAllbookings(remainingBooks);
                     }
                 });
         }
@@ -47,7 +48,7 @@ const MyBookings = () => {
         <div>
             <h2 className="ml-8 mt-8 text-2xl font-bold text-red-500">My all bookings</h2>
             {
-                myBookings.length === 0 ?
+                allbookings.length === 0 ?
                     <p className="text-center mt-10 font-semibold text-lg text-red-500">Not any bookings yet! To book select any package/destination from home page.</p>
                     :
                     allbookings.map(myBooking =>
@@ -60,6 +61,9 @@ const MyBookings = () => {
                             <span className="ml-6"><i className="fas fa-plane-departure"></i> Transport: {myBooking.vehicles}</span>
                             <span className="ml-6"><i className="fas fa-clock"></i> Time: {myBooking.journey_time}</span>
                             <button onClick={() => handleCancel(myBooking._id)} className="bg-red-500 float-right text-white px-2 py-1 rounded-md hover:bg-red-600 hover:shadow-lg">Cancel Book</button>
+                            <br />
+                            Status:
+                            <span className="ml-2 bg-yellow-500 text-white px-2 py-1 rounded-md"> {myBooking.status}</span>
                         </div>)
             }
         </div>

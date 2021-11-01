@@ -12,7 +12,7 @@ const Destination = ({ destination }) => {
 
     return (
         <div>
-            <div className="wrapper bg-gray-100 rounded-md shadow-md antialiased text-gray-900 p-2">
+            <div className="wrapper bg-gray-100 rounded-md shadow-md antialiased text-gray-900 p-2 mb-4">
                 <div>
                     <img src={img} alt=" random imgee" className="w-full h-72 object-cover object-center rounded-lg shadow-md" />
 
